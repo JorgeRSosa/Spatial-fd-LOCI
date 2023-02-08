@@ -5,6 +5,9 @@ library(fossil)
 library(geofd)
 library(geoR)
 library(MASS)
+library(fda)
+library(fda.usc)
+library(fdasrvf)
 
 ### Nota:
 ### si el paquete vows no lo tiene instalado, use el archivo vows.tar.gz de la carpeta 
