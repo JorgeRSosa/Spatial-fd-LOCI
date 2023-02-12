@@ -97,7 +97,7 @@ for (k in 1:mc) {
   E2=mvrnorm(m, 0*(1:n), 2*Cor.math)
   y= sqrt(1)*matrix(rnorm(m*n.curve), m, n.curve)*sigmaf(t)+(E2)
   
-  y[,1:trunc(n.curve*0.9)]=y[,1:trunc(n.curve*0.9)] + simf3(t)
+  y[,1:trunc(n.curve*0.9)]=y[,1:trunc(n.curve*0.9)] + simf1(t)
   y[,trunc((n.curve*0.9)+1):n.curve]=y[, trunc((n.curve*0.9)+1):n.curve] + simf2(t)
   
   bsb = create.bspline.basis(range(t), nbasis=nbasis)
