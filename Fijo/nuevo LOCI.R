@@ -103,7 +103,7 @@ fLOCI <- function (fdataobj, alpha = 0.5, nn = 20, k = 3, dist=c('L2','amp','phs
                                                        radius)])
         npar[j] <- np_obs_radiusNN
       }
-      npar_pi[i] <- length(knn[which(knn <= radius)])
+      npar_pi[i] <- length(knn[which(dist_pi[knn] <= radius)])
       avg_npar[i] <- (sum(npar)/nn)
       sd_npar[i] <- sd(npar)
       MDEF[i] <- 1 - (npar_pi[i]/avg_npar[i])

@@ -40,8 +40,8 @@ source('Simulacion/Dependiente/Caso 1/Simulacion_matern_0.5.R')
 #### Caso 2
 source('Simulacion/Dependiente/Caso 2/Simulacion_matern_0.5.R')
 
-#### Caso 3 ya corrido
-#source('Simulacion/Dependiente/Caso 3/Simulacion_matern_0.5.R')
+#### Caso 3 
+source('Simulacion/Dependiente/Caso 3/Simulacion_matern_0.5.R')
 
 ##### Función matern con factor nu=3/2
 #### Caso 1
@@ -50,8 +50,8 @@ source('Simulacion/Dependiente/Caso 1/Simulacion_matern_1.5.R')
 #### Caso 2
 source('Simulacion/Dependiente/Caso 2/Simulacion_matern_1.5.R')
 
-#### Caso 3 ya corrido
-#source('Simulacion/Dependiente/Caso 3/Simulacion_matern_1.5.R')
+#### Caso 3 
+source('Simulacion/Dependiente/Caso 3/Simulacion_matern_1.5.R')
 
 ##### Función matern con factor nu=inf
 #### Caso 1
@@ -60,8 +60,8 @@ source('Simulacion/Dependiente/Caso 1/Simulacion_matern_INF.R')
 #### Caso 2
 source('Simulacion/Dependiente/Caso 2/Simulacion_matern_INF.R')
 
-#### Caso 3 ya corrido
-#source('Simulacion/Dependiente/Caso 3/Simulacion_matern_INF.R')
+#### Caso 3 
+source('Simulacion/Dependiente/Caso 3/Simulacion_matern_INF.R')
 
 ################################################################################
 
@@ -74,8 +74,8 @@ source('Simulacion/Dependiente/Caso 1 cluster/Simulacion_cluster_matern_0.5.R')
 #### Caso 2
 source('Simulacion/Dependiente/Caso 2 cluster/Simulacion_cluster_matern_0.5.R')
 
-#### Caso 3 ya corrido
-#source('Simulacion/Dependiente/Caso 3 cluster/Simulacion_cluster_matern_0.5.R')
+#### Caso 3 
+source('Simulacion/Dependiente/Caso 3 cluster/Simulacion_cluster_matern_0.5.R')
 
 ##### Función matern con factor nu=3/2
 #### Caso 1
@@ -84,8 +84,8 @@ source('Simulacion/Dependiente/Caso 1 cluster/Simulacion_cluster_matern_1.5.R')
 #### Caso 2
 source('Simulacion/Dependiente/Caso 2 cluster/Simulacion_cluster_matern_1.5.R')
 
-#### Caso 3 ya corrido
-#source('Simulacion/Dependiente/Caso 3 cluster/Simulacion_cluster_matern_1.5.R')
+#### Caso 3 
+source('Simulacion/Dependiente/Caso 3 cluster/Simulacion_cluster_matern_1.5.R')
 
 ##### Función matern con factor nu=inf
 #### Caso 1
@@ -94,6 +94,6 @@ source('Simulacion/Dependiente/Caso 1 cluster/Simulacion_cluster_matern_INF.R')
 #### Caso 2
 source('Simulacion/Dependiente/Caso 2 cluster/Simulacion_cluster_matern_INF.R')
 
-#### Caso 3 ya corrido
-#source('Simulacion/Dependiente/Caso 3 cluster/Simulacion_cluster_matern_INF.R')
+#### Caso 3 
+source('Simulacion/Dependiente/Caso 3 cluster/Simulacion_cluster_matern_INF.R')
 

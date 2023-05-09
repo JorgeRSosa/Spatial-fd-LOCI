@@ -1,5 +1,6 @@
 library(ggplot2)
 library(caret)
+library(dplyr)
 
 load('Rdata/Independiente/Caso 3/result.rdata')
 
@@ -54,8 +55,8 @@ df_kl2_mc <- lapply(df_kl2,function(y) {
 })
 
 l2.stat <- lapply(df_kl2_mc, function(x) {
-  l2.f1f <- c(x[[1]]$byClass['Sensitivity'],x[[1]]$overall['Accuracy'],x[[1]]$byClass['Specificity'],x[[1]]$byClass['Precision'])
-  for(i in 2:100) l2.f1f <- rbind(l2.f1f,c(x[[i]]$byClass['Sensitivity'],x[[i]]$overall['Accuracy'],x[[i]]$byClass['Specificity'],x[[i]]$byClass['Precision']))
+  l2.f1f <- c(x[[1]]$byClass['Sensitivity'],x[[1]]$byClass['Detection Rate'],x[[1]]$byClass['Specificity'],x[[1]]$byClass['Precision'])
+  for(i in 2:100) l2.f1f <- rbind(l2.f1f,c(x[[i]]$byClass['Sensitivity'],x[[i]]$byClass['Detection Rate'],x[[i]]$byClass['Specificity'],x[[i]]$byClass['Precision']))
   l2.f1f <- as.data.frame(l2.f1f)
   l2.f1f['Method'] <- 'LOCI_sL2'
   return(l2.f1f)
@@ -75,8 +76,8 @@ df_koptl2_mc <- lapply(df_koptl2,function(y) {
 })
 
 optl2.stat <- lapply(df_kl2_mc, function(x) {
-  l2.f1f <- c(x[[1]]$byClass['Sensitivity'],x[[1]]$overall['Accuracy'],x[[1]]$byClass['Specificity'],x[[1]]$byClass['Precision'])
-  for(i in 2:100) l2.f1f <- rbind(l2.f1f,c(x[[i]]$byClass['Sensitivity'],x[[i]]$overall['Accuracy'],x[[i]]$byClass['Specificity'],x[[i]]$byClass['Precision']))
+  l2.f1f <- c(x[[1]]$byClass['Sensitivity'],x[[1]]$byClass['Detection Rate'],x[[1]]$byClass['Specificity'],x[[1]]$byClass['Precision'])
+  for(i in 2:100) l2.f1f <- rbind(l2.f1f,c(x[[i]]$byClass['Sensitivity'],x[[i]]$byClass['Detection Rate'],x[[i]]$byClass['Specificity'],x[[i]]$byClass['Precision']))
   l2.f1f <- as.data.frame(l2.f1f)
   l2.f1f['Method'] <- 'LOCI_opt.sL2'
   return(l2.f1f)
@@ -97,8 +98,8 @@ df_krl2_mc <- lapply(df_krl2,function(y) {
 })
 
 rl2.stat <- lapply(df_kl2_mc, function(x) {
-  l2.f1f <- c(x[[1]]$byClass['Sensitivity'],x[[1]]$overall['Accuracy'],x[[1]]$byClass['Specificity'],x[[1]]$byClass['Precision'])
-  for(i in 2:100) l2.f1f <- rbind(l2.f1f,c(x[[i]]$byClass['Sensitivity'],x[[i]]$overall['Accuracy'],x[[i]]$byClass['Specificity'],x[[i]]$byClass['Precision']))
+  l2.f1f <- c(x[[1]]$byClass['Sensitivity'],x[[1]]$byClass['Detection Rate'],x[[1]]$byClass['Specificity'],x[[1]]$byClass['Precision'])
+  for(i in 2:100) l2.f1f <- rbind(l2.f1f,c(x[[i]]$byClass['Sensitivity'],x[[i]]$byClass['Detection Rate'],x[[i]]$byClass['Specificity'],x[[i]]$byClass['Precision']))
   l2.f1f <- as.data.frame(l2.f1f)
   l2.f1f['Method'] <- 'LOCI_L2'
   return(l2.f1f)
@@ -128,13 +129,14 @@ for (i in 1:length(rl2.stat)) {
 
 
 df <- rbind(auxl2,auxoptl2,auxrl2)
+df <- df %>% rename(Detection_Rate=colnames(df)[2])
 
 ggplot(df, aes(x = Method, y = Sensitivity)) +
   geom_boxplot(show.legend = FALSE,na.rm = T) +
   facet_wrap(~K)#+
 #labs(title='Indepent Curve - Shape Variation')
 
-ggplot(df, aes(x = Method, y = Accuracy)) +
+ggplot(df, aes(x = Method, y = Detection_Rate)) +
   geom_boxplot(show.legend = FALSE) +
   facet_wrap(~K)#+
 #labs(title='Indepent Curve - Shape Variation')
