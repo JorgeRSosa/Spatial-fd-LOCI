@@ -147,8 +147,8 @@ combinaciones1=rbind(c(0,0,0),c(1,0,0),c(0,1,0),c(0,0,1),c(1,1,0),c(0,1,1),
 
 #postscript(paste0("Map_risk1_.eps"),family="Helvetica")
 plot(grid_union,border="#898989")
-title('(a)',line=-1)
-colores=c("#1f78b4","#585858","#ffd700","#984ea3","#4daf4a","#ff7f00","#e31a1c")
+#title('(a)',line=-1)
+colores=c("#21C1BD","#FF00FF","#ffd700","#984ea3","#196B2C","#ff7f00","#e31a1c")
 for (i in 2:nrow(combinaciones1)){
   
   celdas=which(df_kl2[[2]]==combinaciones1[i,1] &
@@ -180,7 +180,7 @@ ggplot() + theme_classic()+
         axis.line = element_line(color = "white"),
         plot.title=element_text(hjust=0.5, face='bold', color='black')
   )+
-  labs(title='(b)')+
+  #labs(title='(b)')+
   scale_x_continuous(NULL) + 
   scale_y_continuous(NULL) +
   geom_raster(data = dff[,c(1,2,265)] , aes(x = x, y = y, fill = MDEF)) +
